@@ -1,0 +1,252 @@
+:root {
+  --moradoOs: #1b1523;
+  --grisOs: #565165;
+  --mostazaOs: #b75d69;
+  --piel: #ebcdc4;
+  --blanco: #ffffff;
+  --grisClaro: #dfe9f3;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+/**Scroll Snap**/
+/**.servicios,
+.navegacionPrincipal,
+.formulario{
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  }
+**/
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px; /* 1rem = 10px*/
+  font-family: "Playfair Display", serif;
+  background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%); /*Degradado  blanco a gris*/
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+h2{
+  font-size: 2.0rem;  
+}
+
+h3{
+  font-size: 1.8rem;
+}
+
+h1, h2, h3{
+  text-align: center;
+}
+
+
+.titulo span {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.contenedor {
+  max-width: 120rem; /*Ajustador de pantalla*/
+  margin: 0 auto; /*Separador de margen*/
+}
+
+.boton {
+  background-color: var(--grisOs);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin-top: 3rem;
+  font-size: 1.8rem; /*Tamaño*/
+  font-weight: bold; /*Negrita*/
+  text-decoration: none;
+  text-transform: uppercase;/*Transformar texto*/
+  border-radius: .8rem; /*Esquinas rodiandas*/
+  width: 90%; /*Boton largo*/
+  text-align: center;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .boton {
+    width: auto;/*Automatico, Resetear*/
+}
+}
+
+boton:hover {
+  width: auto;/*Automatico,-------- Resetear*/
+}
+
+/** Ultilidades **/
+.w-100 {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .w-100 {
+    width: auto;/*Automatico, Resetear*/
+}
+}
+
+.flex {
+  display: flex;
+}
+
+.alinarDerecho {
+  justify-content: flex-end;
+}
+
+
+
+.nav-bg {
+  background-color: var(--mostazaOs);
+}
+
+.navegacionPrincipal {
+  display: flex; /*Sepador horiozital */
+  flex-direction: column; /*Mostrar vertical*/
+}
+
+@media (min-width: 768px) {
+  .navegacionPrincipal {
+  flex-direction: row;
+  justify-content: space-between;/*Espacio en los elaces o centrar*/
+}
+}
+
+.navegacionPrincipal a {
+  display: block; /*Centrar elaces horizotal */
+  text-align: center;
+  color: var(--blanco);
+  text-decoration: none; /*Quitar lineas de elaces*/
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem; /*Engodar caja*/
+}
+
+.navegacionPrincipal a:hover {
+  /*RellenoOn ColorBotones*/
+  background-color: var(--piel);
+  color: var(--moradoOs);
+}
+
+.hero {
+  background-image: url(../img/portada.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  position: relative; /** Caracteristica que va relacionado**/
+  margin-bottom: 2rem; /*Seperador de contenido*/
+}
+
+.contenidoHero{
+  position: absolute; /** Caracteristica que va dependente**/
+  background-color: rgba(0,0,0, .2 ); /*Transparencia oscuro*/ 
+  height: 100%; /*Ubicacion*/
+  width: 100%;
+
+  display: flex;/*Oriental Texto*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenidoHero h3, .contenidoHero p{
+  color: var(--blanco);
+}
+
+.sombra{
+-webkit-box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+-moz-box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+background-color: var(--blanco);
+padding: 3rem;
+border-radius: 1rem;
+}
+
+
+@media (min-width: 768px) {
+.servicios {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;/*Divicion por fraciones*/
+  column-gap: 3rem;/*Separar columna*/
+  }}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+.servicio h3 {
+color: var(--grisOs);
+    }
+
+.servicio p {
+line-height: 2;/*Separador de lectura*/
+font-weight: normal;
+    }
+
+.servicio .iconos{
+    height: 15rem;/*Altura*/
+    width: 15rem; /*Anchura*/
+    background-color: var(--moradoOs);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+    }
+
+.formulario{
+  background-color: var(--piel);
+  width: min( 60rem, 100%);/**Comodar el tamaño del cuadro**/
+  margin: 0 auto; /**Comodar al centro**/
+  padding: 2rem;
+  border-radius: 2rem;
+
+  }
+
+.formulario fieldset{
+  border:none;/** nular borde**/
+  }
+
+.formulario legend{
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--moradoOs);
+  } 
+
+.ContenedorCampos{
+  
+  } 
+
+.Campo{
+  margin-bottom: 1rem;
+  } 
+
+  .Campo label{
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;/**Seperacion Guion*/
+
+  } 
+
+  .inputText{
+    width: 100%; /**Amplicar input**/
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+
+  } 
